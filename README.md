@@ -9,6 +9,7 @@
 
 ### 2. Move To Method Begin
 支援移動到目前的 Method 名稱上 , 省得在 VsVim 內還要做一些違反直覺的移動
+![image](if.gif)
 
 ### 3. Move To Method End
 移動到尾端 => 沒屁啥用
