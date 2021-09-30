@@ -34,3 +34,4 @@ User 心如海底針 , 三不五時就切換型別 , 覺得太煩所以才搞這
 在 `Tools` => `Option` => `喇低賽的多語系顯示` => `多語系檔案路徑`
 丟入你的 resx 像是這樣 D:\test\Lang.zh-TW.resx
 即可在多語系的變數上面直接看到中文 , 不然一堆專業名詞還有印度英文實在不曉得變數是啥 ..
+![image](chinese_variable.png)
