@@ -5,6 +5,7 @@
 ## 功能介紹:
 ### 1. PostFixVar
 如果沒錢買 Resharper 又很想用 postfix completion , 我有支援 .return .var 功能可以補全
+![image](postfix.gif)
 
 ### 2. Move To Method Begin
 支援移動到目前的 Method 名稱上 , 省得在 VsVim 內還要做一些違反直覺的移動
