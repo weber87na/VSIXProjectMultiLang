@@ -1,0 +1,367 @@
+"還不錯的老外 config
+"https://github.com/keithn/vsvimguide
+
+set clipboard=unnamed
+set ignorecase
+
+
+"重新設定 leader
+:let mapleader = ","
+
+"<CR> => Enter 的意思
+
+"first example
+"nnoremap <Leader>a :echo "Hello world"<CR>
+
+"editor.action.rename
+"使用 Refactor 功能
+nmap <Leader>rv :vsc Refactor.Rename<CR>
+
+"大範圍搜尋
+"workbench.action.findInFiles
+nmap <Leader>qq :vsc Edit.FindinFiles<CR>
+
+"目前文件搜尋
+"actions.find
+nmap <Leader>ss :vsc Edit.Find<CR>
+"選取的時候區域找
+vmap <Leader>ss :vsc Edit.Find<CR>
+
+"複製相對路徑
+"workbench.action.files.copyPathOfActiveFile
+
+"
+"copyRelativeFilePath
+
+"
+"workbench.action.togglePanel
+
+
+"like vscode command
+"workbench.action.showCommands
+nmap <Leader>xm :vsc View.CommandWindow<CR>
+
+"切換註解
+"editor.action.commentLine
+nmap <Leader>ci :vsc Edit.ToggleComment<CR>
+vmap <Leader>ci :vsc Edit.ToggleComment<CR>
+
+"擴展選取
+"editor.action.smartSelect.expand
+nmap <Leader>xx :vsc Edit.ExpandSelection<CR>
+vmap <Leader>xx :vsc Edit.ExpandSelection<CR>
+
+"反擴展選取
+"editor.action.smartSelect.shrink
+nmap <Leader>zz :vsc Edit.ContractSelection<CR>
+vmap <Leader>zz :vsc Edit.ContractSelection<CR>
+
+"最近開啟的檔案
+"workbench.action.openRecent
+nmap <Leader>zz :vsc Edit.GoToRecentFile<CR>
+
+
+"開窗到右側 ctrl + w w 切換窗
+":vsplit
+"workbench.action.splitEditorRight
+
+"split
+nmap <Leader>x1 :vsplit <CR>
+
+"close
+nmap <Leader>x0 :q <CR>
+
+" map ;; to Esc
+map! <Leader><Leader> <Esc>
+
+"切換到方案總管
+nmap ,e :vsc View.SolutionExplorer<CR>
+
+"ctrl + f6
+"切回 editor
+"Window.NextDocumentWindow
+"可以設定為 alt + e
+
+"TestExplorer.ShowTestExplorer
+"alt + t
+
+"gh
+map <Leader>gh :vsc Edit.QuickInfo<CR>
+
+"在方案總管開啟資料夾
+"nmap ,of :vsc ProjectandSolutionContextMenus.Project.OpenFolderinFileExplorer<CR>
+
+
+"gb 設定相同字選擇功能
+map <Leader>gb :vsc Edit.InsertNextMatchingCaret<CR>
+
+"https://github.com/VsVim/VsVim/issues/1474
+" Surround simulating bindings
+nnoremap s) ciw(<C-r>")<Esc>
+nnoremap s] ciw[<C-r>"]<Esc>
+nnoremap s} ciw{<C-r>"}<Esc>
+nnoremap s> ciw<lt><C-r>"><Esc>
+nnoremap s" ciw"<C-r>""<Esc>
+nnoremap s' ciw'<C-r>"'<Esc>
+nnoremap sw) ciW(<C-r>")<Esc>
+nnoremap sw] ciW[<C-r>"]<Esc>
+nnoremap sw} ciW{<C-r>"}<Esc>
+nnoremap sw> ciW<lt><C-r>"><Esc>
+nnoremap sw" ciW"<C-r>""<Esc>
+nnoremap sw' ciW'<C-r>"'<Esc>
+
+" Surround delete bindings
+nnoremap ds) vi(dvhp
+nnoremap ds] vi[dvhp
+nnoremap ds} vi{dvhp
+nnoremap ds> vi<dvhp
+nnoremap ds" vi"dvhp
+nnoremap ds' vi'dvhp
+
+" Surround change bindings
+nnoremap cs"' vi"oh<Esc>msvi"l<Esc>cl'<Esc>`scl'<Esc>
+nnoremap cs'" vi'oh<Esc>msvi'l<Esc>cl"<Esc>`scl"<Esc>
+
+" Surround visual selected text
+vnoremap S" c"<C-r>""<Esc>
+vnoremap S' c"<C-r>"'<Esc>
+vnoremap S) c(<C-r>")<Esc>
+vnoremap S] c[<C-r>"]<Esc>
+vnoremap S} c{<C-r>"}<Esc>
+vnoremap S> c<lt><C-r>"><Esc>
+vnoremap S* c/*<C-r>"*/<Esc>
+"vnoremap St c<lt>div><CR><C-r>"<Esc>
+" Surround in div tag and edit tag
+vnoremap St c<lt>div><CR><C-r>"<Esc>`<lt>lcw
+
+
+" template
+map <LEADER>. <ESC> /<++><CR>:nohlsearch<CR>c4l
+
+" add var x = 
+map <LEADER>vx ^ivar x = <ESC> bbciw
+
+"
+map <LEADER>gp ^ivar x = new YourObject(); var t = x.GetType(); foreach (var prop in t.GetProperties()) Console.WriteLine( $"x.{prop.Name} = " ); <ESC>
+
+"Json To Chsarp
+map <LEADER>c2j :vsc Edit.PasteJSONAsClasses<CR>
+
+"Add New Class
+map <Leader>nc :vsc Project.AddClass<CR>
+
+"SurroundWith
+"map <Leader>sr :vsc Edit.SurroundWith<CR>
+map <Leader>sr :vsc ReSharper.ReSharper_SurroundWith<CR>
+
+"ListMembers
+map <Leader>lm :vsc ListMembers<CR>
+
+"so
+nmap <Leader>so :so ~/_vsvimrc<CR>
+
+"to string
+"nmap <Leader>2s viwxistring<Esc>
+
+"to string use extension
+nmap <Leader>2s viw:vsc Tools.ToString<CR>
+
+"to int use extension
+nmap <Leader>2i viw:vsc Tools.ToInt<CR>
+
+"to bool
+"nmap <Leader>2b viwxibool<Esc>
+
+"to bool use extension
+nmap <Leader>2b viw:vsc Tools.ToBool<CR>
+
+"to float
+"nmap <Leader>2f viwxifloat<Esc>
+
+"to decimal
+"nmap <Leader>2d viwxidecimal<Esc>
+
+"to var
+"nmap <Leader>2v viwxivar<Esc>
+
+"to var use extension
+nmap <Leader>2v viw:vsc Tools.ToVar<CR>
+
+"to double use extension
+nmap <Leader>2f viw:vsc Tools.ToDouble<CR>
+
+"toogle true
+"nmap <Leader>tt viwxitrue<Esc>
+
+"toogle false
+"nmap <Leader>tf viwxifalse<Esc>
+
+"toogle use extension
+nmap <Leader>tt viw:vsc Tools.Toggle<CR>
+
+"to mvc url
+nmap <Leader>2u vi'xi@Url.Content("<C-r>"")
+
+"go to file 必須先選中路徑
+map <Leader>gf :vsc Tools.GoToFile<CR>
+
+"go to browser 最好選中網址
+map <Leader>gg :vsc EditorContextMenus.CodeWindow.OpenURL
+
+"select current method
+map <Leader>vim :vsc Tools.SelectCurrentMethod<CR>
+
+"Move To Method Begin
+map <Leader>gmb :vsc Tools.MoveToMethodBegin<CR>
+
+"Move To Method End
+map <Leader>gme :vsc Tools.MoveToMethodEnd<CR>
+
+"移動到 if
+nmap gif :vsc Tools.MoveToIfBegin<CR>
+
+"postfix completion
+map <LEADER>. :vsc Tools.PostFixVar<CR>
+
+"number to eng
+map <LEADER>2e viw:vsc Tools.ToEng<CR>
+imap <LEADER>2e <Esc>viw:vsc Tools.ToEng<CR>i
+
+"visual mode replace
+"參考 https://vim.fandom.com/wiki/Search_and_replace_in_a_visual_selection
+"清除下滑線 underscore
+nmap \"s vi":s/_/ /g<CR>
+vmap \s :s/_/ /g<CR>
+
+"space to underscore
+nmap \"u vi":s/\%V /_/g<CR>
+vmap \u :s/\%V /_/g<CR>
+
+"swap underscore
+nmap \xu cf_<Esc>ea_<Esc>px
+
+"swap space
+nmap \xs cf <Esc>ea <Esc>px
+
+" 設定尖括號
+" set mps+=<:>
+
+
+" gS prefix is added for ViEmu, no use for VsVim AFAIK.
+"VsVim and ViEmu are disabled until PeasyMotion finishes
+
+"Whole viewport jump-to-word beginning mode:
+nnoremap <Space> :vsc Tools.InvokePeasyMotion<CR>
+
+"Select text from current caret position to desired jump label (fwd and reverse directions supported)
+"nmap ;; :vsc Tools.InvokePeasyMotionTextSelect<CR>
+
+"Jump to word beginning in current line
+"nmap zw :vsc Tools.InvokePeasyMotionLineJumpToWordBegining<CR>
+"Jump to word ending in current line
+"nmap ze :vsc Tools.InvokePeasyMotionLineJumpToWordEnding<CR>
+
+"Jump to any open document tab
+"nmap ;w :vsc Tools.InvokePeasyMotionJumpToDocumentTab<CR>
+
+"Jump to line beginning:
+"nmap ;l :vsc Tools.InvokePeasyMotionJumpToLineBegining<CR>
+
+"Two char search mode:
+"nmap ;c :vsc Tools.InvokePeasyMotionTwoCharJump<CR>
+
+
+" 跑 unit test
+map <LEADER>rat :vsc TestExplorer.RunAllTests<CR>
+nmap zra zz:vsc CodeMaid.CleanupActiveDocument<CR>:vsc TestExplorer.RunAllTests<CR>
+imap zra <Esc>zz:vsc CodeMaid.CleanupActiveDocument<CR>make<CR>:vsc TestExplorer.RunAllTests<CR>
+vmap zra <Esc><Esc>zz:vsc CodeMaid.CleanupActiveDocument<CR>make<CR>:vsc TestExplorer.RunAllTests<CR>
+
+"ReSharper 快捷
+"抽 Method
+nmap <LEADER>rem :vsc ReSharper.ReSharper_ExtractMethod<CR>
+vmap M :vsc ReSharper.ReSharper_ExtractMethod<CR>
+
+"抽 field
+map <LEADER>rif :vsc ReSharper.ReSharper_IntroduceField<CR>
+map zif :vsc ReSharper.ReSharper_IntroduceField<CR>
+
+"抽 parameter
+map <LEADER>rip :vsc ReSharper.ReSharper_IntroduceParameter<CR>
+map zip :vsc ReSharper.ReSharper_IntroduceParameter<CR>
+
+"抽 var
+map <LEADER>riv :vsc ReSharper.ReSharper_IntroVariable<CR>
+map ziv :vsc ReSharper.ReSharper_IntroVariable<CR>
+
+"讓變數轉換為 inline
+map <LEADER>rii :vsc ReSharper.ReSharper_InlineVariable<CR>
+map zii :vsc ReSharper.ReSharper_InlineVariable<CR>
+
+
+"複製測試 method
+"imap <F1> <Esc>y?[T<CR>p/public<CR>$B
+"nmap <F1> y?[T<CR>p/public<CR>$B
+
+"複製上個 method or 測試案例
+imap <F1> <Esc>:vsc Edit.PreviousMethod<CR>:vsc Tools.SelectCurrentMethod<CR>:vsc Edit.Duplicate<CR>0<C-c>:vsc Tools.MoveToMethodBegin<CR>
+nmap <F1> <Esc>:vsc Edit.PreviousMethod<CR>:vsc Tools.SelectCurrentMethod<CR>:vsc Edit.Duplicate<CR>0<C-c>:vsc Tools.MoveToMethodBegin<CR>
+
+
+
+
+"保存之前的內容
+":let @a=@/<CR>
+
+
+"下個錯誤
+nmap zn :vsc View.NextError<CR>
+
+
+"上個錯誤
+nmap zp :vsc View.PreviousError<CR>
+
+"跳駝峰
+"https://stackoverflow.com/questions/314095/make-visual-studio-understand-camelcase-when-hitting-ctrl-and-cursor-keys
+"
+nmap z] :vsc ReSharper_HumpNext<CR>
+nmap z[ :vsc ReSharper_HumpPrev<CR>
+
+"插入測試
+imap <LEADER>ae Assert.AreEqual(expected,actual);<Esc>T(f,eciw
+nmap <LEADER>ae aAssert.AreEqual(expected,actual);<Esc>T(f,eciw
+
+"選完後複製
+vmap <LEADER>y :vsc Edit.Duplicate<CR>
+
+"移動到下個 method
+nmap gnm :vsc Edit.NextMethod<CR>
+
+"移動到上個 method
+nmap gpm :vsc Edit.PreviousMethod<CR>
+
+"移動到下個 method
+nmap gmj :vsc Edit.NextMethod<CR>
+
+"移動到上個 method
+nmap gmk :vsc Edit.PreviousMethod<CR>
+
+"補分號
+nmap z; $a;<Esc>
+imap z; <Esc>$a;
+
+"移動到頭尾
+:nmap zh ^
+":nmap hh ^
+:imap zh <Esc>^i
+:nmap zl $
+":nmap ll $
+:imap zl <End>
+
+"quick action 上下
+"tab
+"shift tab
+
+"跳到 member
+nmap gm :vsc ReSharper.ReSharper_GotoFileMember<CR>
+
