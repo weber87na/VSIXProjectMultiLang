@@ -9,13 +9,14 @@
 
 ### 2. Move To Method Begin
 支援移動到目前的 Method 名稱上 , 省得在 VsVim 內還要做一些違反直覺的移動
-
+![image](method.gif)
 
 ### 3. Move To Method End
 移動到尾端 => 沒屁啥用
 
 ### 4. Select Current Method
 這個在 VsVim or Vim 內只有選目前花括號內的內容 , 但是日常會用到選整個 Method , 多多少少有用
+![image](method.gif)
 
 ### 5. AddChinese
 忘了哪邊幹來的 code , 反正好像可以中文加法 , 太久了有點遺忘
