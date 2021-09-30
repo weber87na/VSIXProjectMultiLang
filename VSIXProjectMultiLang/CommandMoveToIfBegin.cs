@@ -29,7 +29,7 @@ namespace VSIXProjectMultiLang
         /// <summary>
         /// Command ID.
         /// </summary>
-        public const int CommandId = 0x0100;
+        public const int CommandId = 4142;
 
         /// <summary>
         /// Command menu group (command set GUID).
@@ -118,7 +118,7 @@ namespace VSIXProjectMultiLang
             Debug.WriteLine( text );
 
             MethodLogic methodLogic = new MethodLogic( );
-            methodLogic.MoveToBegin( wpfTextView );
+            methodLogic.MoveToIfBegin( wpfTextView );
 
         }
 
