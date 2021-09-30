@@ -9,7 +9,7 @@
 
 ### 2. Move To Method Begin
 支援移動到目前的 Method 名稱上 , 省得在 VsVim 內還要做一些違反直覺的移動
-![image](if.gif)
+
 
 ### 3. Move To Method End
 移動到尾端 => 沒屁啥用
@@ -31,6 +31,7 @@ User 心如海底針 , 三不五時就切換型別 , 覺得太煩所以才搞這
 
 ### 9. Move To If Begin
 這個算是有用 , 面對又臭又長的邏輯 code 常常就忘記自己在哪個 if block 要改條件 , 這個可以直接移動到條件式裡方便修改
+![image](if.gif)
 
 ### 10. 顯示多語系的繁體中文在畫面上
 在 `Tools` => `Option` => `喇低賽的多語系顯示` => `多語系檔案路徑`
