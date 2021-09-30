@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+    <Metadata>
+        <Identity Id="VSIXProjectMultiLang.844d384e-389f-4125-b7d8-2e9531c4a6f4" Version="0.01" Language="zh-TW" Publisher="Weber Chang , 喇賽人" />
+        <DisplayName>喇低賽的幫手</DisplayName>
+        <Description xml:space="preserve">維護爛碼時常常切換 true , false 感到賭爛 , 可以快速切換 true , false , 0 , 1 等等 , vs2019 or vim 都沒辦法直接選取整個 method , 刻一個陽春的 , vs2019 沒有 .var 的功能 , 自己做個窮人版 , 賭爛多語系變數看不出來是啥原意 , 讓多語系變數的原意直接顯示在變數上</Description>
+        <MoreInfo>https://weber87na.github.io/</MoreInfo>
+        <Icon>sai.png</Icon>
+        <PreviewImage>sai.png</PreviewImage>
+        <Tags>PostfixCompletion MultiLanguage Toggle Switch</Tags>
+        <Preview>true</Preview>
+    </Metadata>
+    <Installation>
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[16.0, 17.0)" />
+    </Installation>
+    <Dependencies>
+        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+    </Dependencies>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[16.0,17.0)" DisplayName="Visual Studio core editor" />
+    </Prerequisites>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+        <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" />
+    </Assets>
+</PackageManifest>
