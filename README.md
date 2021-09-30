@@ -1,6 +1,7 @@
 # VSIXProjectMultiLang
 
 喇低賽的幫手 Visual Studio Extension , 提供自己一些日常會用到但是 Visual Studio & VsVim 沒有支援的功能 , 沒辦法只好自己土炮
+需要看設定檔的話請參考 vsvimrc
 
 ## 功能介紹:
 ### 1. PostFixVar
