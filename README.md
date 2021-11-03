@@ -44,3 +44,10 @@ User 心如海底針 , 三不五時就切換型別 , 覺得太煩所以才搞這
 丟入你的 resx 像是這樣 D:\test\Lang.zh-TW.resx
 即可在多語系的變數上面直接看到中文 , 不然一堆專業名詞還有印度英文實在不曉得變數是啥 ..
 ![image](chinese_variable.png)
+
+### 12. Matchit
+Matchit 是一種快速移動到 tag 或是 bracket 的 vim extension
+本來是想致敬 [emacs 大師的 Matchit](https://github.com/redguardtoo/vscode-matchit/blob/master/src/extension.ts)
+實作過程中用 vsvim + SendKey 去模擬這個功能 , 所以有些不完美 , 只能手動設定快捷鍵 , 我是設定 `F3`
+沒辦法用 `_vsvimrc` 去 remap key 成 `%`
+![image](Matchit.gif)
