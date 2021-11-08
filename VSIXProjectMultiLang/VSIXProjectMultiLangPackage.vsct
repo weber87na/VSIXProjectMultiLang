@@ -126,6 +126,14 @@
         </Strings>
       </Button>
 
+            <Button guid="guidVSIXProjectMultiLangPackageCmdSet" id="cmdidCommandMatchit" priority="0x0100" type="Button">
+        <Parent guid="guidVSIXProjectMultiLangPackageCmdSet" id="MyMenuGroup" />
+        <Strings>
+          <ButtonText>Matchit</ButtonText>
+        </Strings>
+      </Button>
+
+
       <Button guid="guidVSIXProjectMultiLangPackageCmdSet" id="cmdidCommandMoveToIfBegin" priority="0x0100" type="Button">
         <Parent guid="guidVSIXProjectMultiLangPackageCmdSet" id="MyMenuGroup" />
         <Strings>
@@ -154,6 +162,7 @@
       <Bitmap guid="guidImages5" href="Resources\CommandConvToDouble.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
       <Bitmap guid="guidImages6" href="Resources\CommandConvToString.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
       <Bitmap guid="guidImages7" href="Resources\CommandGoToFile.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+      <!--<Bitmap guid="guidImages8" href="Resources\CommandMatchit.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />-->
     </Bitmaps>
   </Commands>
 
@@ -179,6 +188,7 @@
       <IDSymbol value="4140" name="cmdidPostfixVar" />
       <IDSymbol value="4141" name="cmdidCommandConvToEng" />
       <IDSymbol value="4142" name="cmdidCommandMoveToIfBegin" />
+      <IDSymbol value="4143" name="cmdidCommandMatchit" />
     </GuidSymbol>
 
     <GuidSymbol name="guidImages" value="{6612c260-77de-4c37-873d-ca7f64d0e5ef}">

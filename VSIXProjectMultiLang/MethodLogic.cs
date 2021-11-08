@@ -83,6 +83,59 @@ class NumberToWords
 
     public class MethodLogic
     {
+        //借鏡 emacs 大師
+        //https://github.com/redguardtoo/vscode-matchit/blob/master/src/extension.ts
+        //注意不能直接 mapping 原本的 key %
+        //需要用 leader + % 才有用
+        public void Matchit(IWpfTextView wpfTextView, DTE dte)
+        {
+            var span = wpfTextView.Caret.ContainingTextViewLine.Extent;
+            var tree = CSharpSyntaxTree.ParseText( wpfTextView.TextSnapshot.GetText( ) );
+            var root = tree.GetRoot( );
+
+
+            // Get mnemonic content from editor.
+            SnapshotPoint caretPosition = wpfTextView.Caret.Position.BufferPosition;
+            ITextSnapshotLine line = wpfTextView.Caret.Position.BufferPosition.GetContainingLine( );
+            string lineText = line.GetText( );
+
+            if ("{}[]()".IndexOf( caretPosition.GetChar( ) ) >= 0)
+            {
+                dte.ExecuteCommand( "Edit.GotoBrace" );
+                return;
+            }
+
+            void Vat()
+            {
+                System.Windows.Forms.SendKeys.SendWait( "vat" );
+            }
+
+
+            Regex regex = new Regex( @"^[ \t]*(<[A-Za-z]|<\/[A-Za-z][a-zA-Z0-9]*)" );
+            var isMatch = regex.IsMatch( lineText );
+
+            if (isMatch)
+            {
+                //目前只有多行有用
+                //確認是否為關閉標籤
+                if (lineText.Trim( )[1].ToString( ) == "/")
+                {
+                    //標籤尾
+                    Vat( );
+                    System.Windows.Forms.SendKeys.Send( "o" );
+                    System.Windows.Forms.SendKeys.Send( "{Esc}" );
+                }
+                else
+                {
+                    //標籤頭
+                    Vat( );
+                    System.Windows.Forms.SendKeys.Send( "{Esc}" );
+                }
+
+            }
+        }
+
+
         public void MoveToEnd(IWpfTextView wpfTextView)
         {
             var span = wpfTextView.Caret.ContainingTextViewLine.Extent;

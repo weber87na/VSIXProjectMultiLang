@@ -56,6 +56,7 @@
     <Compile Include="CommandConvToString.cs" />
     <Compile Include="CommandConvToVar.cs" />
     <Compile Include="CommandGoToFile.cs" />
+    <Compile Include="CommandMatchit.cs" />
     <Compile Include="CommandMoveToIfBegin.cs" />
     <Compile Include="CommandMoveToBegin.cs" />
     <Compile Include="CommandMoveToEnd.cs" />
@@ -126,6 +127,7 @@
     <Content Include="Resources\CommandConvToInt.png" />
     <Content Include="Resources\CommandConvToString.png" />
     <Content Include="Resources\CommandConvToVar.png" />
+    <Content Include="Resources\CommandMatchit.png" />
     <Content Include="Resources\CommandGoToFile.png" />
     <Content Include="Resources\CommandMoveToEnd.png" />
     <Content Include="Resources\CommandSelectCurrentMethod.png" />

@@ -61,6 +61,7 @@ namespace VSIXProjectMultiLang
             await CommandConvToDouble.InitializeAsync(this);
             await CommandConvToString.InitializeAsync(this);
             await CommandGoToFile.InitializeAsync(this);
+            await CommandMatchit.InitializeAsync(this);
         }
 
         #endregion
