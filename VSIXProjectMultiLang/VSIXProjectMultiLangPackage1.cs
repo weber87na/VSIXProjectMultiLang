@@ -64,6 +64,7 @@ namespace VSIXProjectMultiLang
         public const int cmdidCommandConvToEng = 0x102D;
         public const int cmdidCommandMoveToIfBegin = 0x102E;
         public const int cmdidCommandMatchit = 0x102F;
+        public const int cmdidCommandAddJsonPropertyName = 0x1030;
         public const int bmpPic1 = 0x0001;
         public const int bmpPic2 = 0x0002;
         public const int bmpPicSearch = 0x0003;

@@ -126,13 +126,20 @@
         </Strings>
       </Button>
 
-            <Button guid="guidVSIXProjectMultiLangPackageCmdSet" id="cmdidCommandMatchit" priority="0x0100" type="Button">
+      <Button guid="guidVSIXProjectMultiLangPackageCmdSet" id="cmdidCommandMatchit" priority="0x0100" type="Button">
         <Parent guid="guidVSIXProjectMultiLangPackageCmdSet" id="MyMenuGroup" />
         <Strings>
           <ButtonText>Matchit</ButtonText>
         </Strings>
       </Button>
 
+
+      <Button guid="guidVSIXProjectMultiLangPackageCmdSet" id="cmdidCommandAddJsonPropertyName" priority="0x0100" type="Button">
+        <Parent guid="guidVSIXProjectMultiLangPackageCmdSet" id="MyMenuGroup" />
+        <Strings>
+          <ButtonText>AddJsonPropertyName</ButtonText>
+        </Strings>
+      </Button>
 
       <Button guid="guidVSIXProjectMultiLangPackageCmdSet" id="cmdidCommandMoveToIfBegin" priority="0x0100" type="Button">
         <Parent guid="guidVSIXProjectMultiLangPackageCmdSet" id="MyMenuGroup" />
@@ -189,6 +196,7 @@
       <IDSymbol value="4141" name="cmdidCommandConvToEng" />
       <IDSymbol value="4142" name="cmdidCommandMoveToIfBegin" />
       <IDSymbol value="4143" name="cmdidCommandMatchit" />
+      <IDSymbol value="4144" name="cmdidCommandAddJsonPropertyName" />
     </GuidSymbol>
 
     <GuidSymbol name="guidImages" value="{6612c260-77de-4c37-873d-ca7f64d0e5ef}">

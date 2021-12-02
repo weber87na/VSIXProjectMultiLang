@@ -62,6 +62,7 @@ namespace VSIXProjectMultiLang
             await CommandConvToString.InitializeAsync(this);
             await CommandGoToFile.InitializeAsync(this);
             await CommandMatchit.InitializeAsync(this);
+            await CommandAddJsonPropertyName.InitializeAsync(this);
         }
 
         #endregion

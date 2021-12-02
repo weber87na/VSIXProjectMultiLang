@@ -1,4 +1,5 @@
 ﻿using EnvDTE;
+using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.VisualStudio.Text;
@@ -83,6 +84,46 @@ class NumberToWords
 
     public class MethodLogic
     {
+        public void AddJsonPropertyName(IWpfTextView wpfTextView, DTE dte)
+        {
+            var span = wpfTextView.Caret.ContainingTextViewLine.Extent;
+            var tree = CSharpSyntaxTree.ParseText( wpfTextView.TextSnapshot.GetText( ) );
+            var root = tree.GetRoot( );
+
+
+            // Get mnemonic content from editor.
+            SnapshotPoint caretPosition = wpfTextView.Caret.Position.BufferPosition;
+            ITextSnapshotLine line = wpfTextView.Caret.Position.BufferPosition.GetContainingLine( );
+            string currentLineText = line.GetText( );
+
+
+            var  currentTree = CSharpSyntaxTree.ParseText(currentLineText);
+            var mem = currentTree.GetRoot().DescendantNodes().OfType<MemberDeclarationSyntax>( );
+            var prop = mem.FirstOrDefault( ) as PropertyDeclarationSyntax;
+            if (prop != null)
+            {
+                var attrName = SyntaxFactory.ParseName( "JsonPropertyName" );
+                var arguments = SyntaxFactory.ParseAttributeArgumentList( $"(\"{prop.Identifier.Text}\")" );
+                var attribute = SyntaxFactory.Attribute( attrName, arguments ); //MyAttribute("some_param")
+
+                var attributeList = new SeparatedSyntaxList<AttributeSyntax>( );
+                attributeList = attributeList.Add( attribute );
+                //[MyAttribute("some_param")]
+                var list = SyntaxFactory.AttributeList( attributeList );
+                var newP = prop.AddAttributeLists( list );
+                Console.WriteLine(newP);
+
+
+                var textEdit = wpfTextView.TextBuffer.CreateEdit( );
+                //textEdit.Insert( line.Start.Position - 1, Environment.NewLine );
+                textEdit.Insert( line.Start.Position - 1, Environment.NewLine + list.ToString( ) );
+                textEdit.Apply( );
+
+                dte.ExecuteCommand( "Edit.FormatDocument" );
+            }
+
+        }
+
         //借鏡 emacs 大師
         //https://github.com/redguardtoo/vscode-matchit/blob/master/src/extension.ts
         //注意不能直接 mapping 原本的 key %

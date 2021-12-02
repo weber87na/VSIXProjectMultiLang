@@ -13,11 +13,10 @@ using Task = System.Threading.Tasks.Task;
 namespace VSIXProjectMultiLang
 {
 
-
     /// <summary>
     /// Command handler
     /// </summary>
-    internal sealed class CommandMatchit
+    internal sealed class CommandAddJsonPropertyName
     {
         private static DTE dte;
 
@@ -25,7 +24,7 @@ namespace VSIXProjectMultiLang
         /// <summary>
         /// Command ID.
         /// </summary>
-        public const int CommandId = 4143;
+        public const int CommandId = 4144;
 
         /// <summary>
         /// Command menu group (command set GUID).
@@ -38,12 +37,12 @@ namespace VSIXProjectMultiLang
         private readonly AsyncPackage package;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CommandMatchit"/> class.
+        /// Initializes a new instance of the <see cref="CommandAddJsonPropertyName"/> class.
         /// Adds our command handlers for menu (commands must exist in the command table file)
         /// </summary>
         /// <param name="package">Owner package, not null.</param>
         /// <param name="commandService">Command service to add command to, not null.</param>
-        private CommandMatchit(AsyncPackage package, OleMenuCommandService commandService)
+        private CommandAddJsonPropertyName(AsyncPackage package, OleMenuCommandService commandService)
         {
             this.package = package ?? throw new ArgumentNullException( nameof( package ) );
             commandService = commandService ?? throw new ArgumentNullException( nameof( commandService ) );
@@ -56,7 +55,7 @@ namespace VSIXProjectMultiLang
         /// <summary>
         /// Gets the instance of the command.
         /// </summary>
-        public static CommandMatchit Instance
+        public static CommandAddJsonPropertyName Instance
         {
             get;
             private set;
@@ -79,13 +78,13 @@ namespace VSIXProjectMultiLang
         /// <param name="package">Owner package, not null.</param>
         public static async Task InitializeAsync(AsyncPackage package)
         {
-            // Switch to the main thread - the call to AddCommand in CommandMatchit's constructor requires
+            // Switch to the main thread - the call to AddCommand in CommandAddJsonPropertyName's constructor requires
             // the UI thread.
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync( package.DisposalToken );
             dte = (DTE)await package.GetServiceAsync(typeof(DTE));
             OleMenuCommandService commandService = await package.GetServiceAsync( typeof( IMenuCommandService ) ) as OleMenuCommandService;
             Assumes.Present(dte);
-            Instance = new CommandMatchit( package, commandService );
+            Instance = new CommandAddJsonPropertyName( package, commandService );
         }
 
         /// <summary>
@@ -105,7 +104,7 @@ namespace VSIXProjectMultiLang
         {
             this.wpfTextView = GetCurrentTextView( );
             MethodLogic methodLogic = new MethodLogic( );
-            methodLogic.Matchit( wpfTextView , dte);
+            methodLogic.AddJsonPropertyName( wpfTextView , dte);
 
         }
         public IWpfTextView GetCurrentTextView()

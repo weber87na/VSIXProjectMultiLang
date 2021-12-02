@@ -49,6 +49,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CommandAddChinese.cs" />
+    <Compile Include="CommandAddJsonPropertyName.cs" />
     <Compile Include="CommandConvToBool.cs" />
     <Compile Include="CommandConvToDouble.cs" />
     <Compile Include="CommandConvToEng.cs" />
