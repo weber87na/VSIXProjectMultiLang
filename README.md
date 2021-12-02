@@ -51,3 +51,7 @@ Matchit 是一種快速移動到 tag 或是 bracket 的 vim extension
 實作過程中用 vsvim + SendKey 去模擬這個功能 , 所以有些不完美 , 只能手動設定快捷鍵 , 我是設定 `F3`
 沒辦法用 `_vsvimrc` 去 remap key 成 `%`
 ![image](Matchit.gif)
+
+### 13. AddJsonPropertyName
+我受夠一堆舊的 .net 物件都要手動加 JsonPropertyName , 所以自己寫一個快速加的方法
+![image](AddJsonPropertyName.gif)
